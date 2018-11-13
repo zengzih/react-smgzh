@@ -1,0 +1,82 @@
+@import "common/var.less";
+.start_wrapper {
+    height: 100%;
+    header {
+        height: @header-height;
+        border-bottom: 1px solid #ccc;
+        box-sizing: border-box;
+        text-align: center;
+        line-height: @header-height;
+        font-size: 18px;
+        color: #000;
+        font-weight: bold;
+    }
+    .content {
+        padding: 10px;
+        box-sizing: border-box;
+        overflow: auto;
+        height:calc(~"100% - 150px");
+    }
+    .footer {
+        position: fixed;
+        bottom: 0;
+        border-top: 1px solid #ccc;
+        padding-top: 4px;
+        width: 100%;
+        label {
+            font-size: 14px;
+            padding: 0 10px;
+            margin-bottom: 5px;
+            display: inline-block;
+            input {
+                display: none;
+            }
+            .inner {
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+                border: 2px solid @theme-color;
+                vertical-align: sub;
+                margin-right: 5px;
+                font-size: 12px;
+                border-radius: 4px;
+                font-weight: bold;
+                position: relative;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 8px;
+                    height: 5px;
+                    left: 2px;
+                    top: 2px;
+                    border: 2px solid #fff;
+                    border-top: none;
+                    border-right: 0;
+                    transition: all 0.1s linear;
+                    transform: scale(0) rotate(-45deg);
+                }
+            }
+            input:checked + .inner{
+                background: #f7d66a;
+                &:after {
+                    transform: scale(1) rotate(-45deg);;
+                }
+            }
+        }
+        button {
+            width: 100%;
+            height: @header-height;
+            border-radius: 2px;
+            font-size: 14px;
+            color: #fff;
+            border: none;
+            outline: none;
+            &.submitButton {
+                background: @theme-color;
+            }
+            &.sliverButton {
+                background: #e4e4e4;
+            }
+        }
+    }
+}
