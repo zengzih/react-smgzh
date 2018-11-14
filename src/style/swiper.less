@@ -1,15 +1,26 @@
 @import "common/var.less";
 .swipe_wrapper {
   height: @swipe-height;
+  overflow: hidden;
+  position: relative;
   width: 100%;
   .swipe_list {
     height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     overflow: hidden;
+    /*transition: all 0.2s linear;*/
     .list-box {
       height: 100%;
       float: left;
       img {
         height: 100%;
+      }
+      &:first-child {
+        position: static;
+        left: 0;
+        top: 0;
       }
     }
   }
